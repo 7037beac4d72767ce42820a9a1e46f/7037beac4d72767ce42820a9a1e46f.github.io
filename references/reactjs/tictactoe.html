@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>React &#187; Tictactoe | JUNNEL T TORATE</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="all,follow" />
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="../../vendor/font-awesome/css/font-awesome.min.css" />
+    <!-- Google fonts - Roboto + Roboto Slab-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300" />
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="../../vendor/owl.carousel/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="../../vendor/owl.carousel/assets/owl.theme.default.css" />
+    <!-- animate.css-->
+    <link rel="stylesheet" href="../../vendor/animate.css/animate.css" />
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../../css/style.blue.css" id="theme-stylesheet" />
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../../css/custom.css" />
+    <!-- Leaflet CSS - For the map-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <!-- Cookie Consent-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../../img/logos/logo.png" />
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
+		><![endif]-->
+</head>
+
+<body>
+    <!-- Header-->
+    <div id="layout-header"></div>
+
+    <section id="content-page">
+        <div class="container">
+            <h4 class="content-title"><a href="../">References</a> &#187; <a href="./">React</a> &#187; Tictactoe</h4>
+            <p style="height: 500px"></p>
+        </div>
+    </section>
+
+    <!-- Guest Modal -->
+    <div id="layout-guest-modal"></div>
+
+    <!-- Loader Modal -->
+    <div id="layout-loader-modal"></div>
+
+    <!-- Scroll Top Button-->
+    <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- Footer-->
+    <div id="layout-footer"></div>
+
+    <!-- JavaScript files-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../../vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="../../vendor/jquery.counterup/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="../../js/front.js"></script>
+    <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
+    <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
+    <script src="../../js/scrollTop.js"></script>
+    <script src="../../js/parseQueryString.js"></script>
+    <script src="../../js/cookieSetting.js"></script>
+    <script src="../../js/navigatorGeolocation.js"></script>
+    <script src="../../js/guestLogger.js"></script>
+    <script src="../../js/myWorksTabEvents.js"></script>
+    <script src="../../js/cookiePolicy.js"></script>
+    <script src="../../js/custom.js"></script>
+
+    <script>
+        $(function() {
+            $('#layout-header').load('../../layout/header.html');
+            $('#layout-footer').load('../../layout/footer.html');
+            $('#layout-guest-modal').load('../../layout/guest-modal.html', () => {
+                $.getScript('../../js/guestModal.js');
+            });
+            $('#layout-loader-modal').load('../../layout/loader-modal.html', () => {
+                $.getScript('../../js/loaderModal.js');
+            });
+        });
+    </script>
+</body>
+
+</html>
