@@ -441,7 +441,6 @@
 #loader-modal .modal-content {
 	background-color: transparent;
 	border-color: transparent;
-	margin-left: -10px;
 }
 
 .loader {
@@ -467,10 +466,6 @@
 	.modal-sm {
 		width: calc(100% - 200px);
 		margin: auto;
-	}
-
-	#loader-modal .modal-content {
-		margin-left: 0px;
 	}
 }
 
