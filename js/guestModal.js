@@ -9,6 +9,7 @@ const $guestModal = $('#guest-modal');
 const queryString = window.location.search.substring(1);
 const parsedQs = parseQueryString(queryString);
 const appCode = (parsedQs.app ?? 'GLOBAL').toString().trim().toUpperCase();
+let guestModalOpen = false; // Default
 
 $(document).ready(function () {
 	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
@@ -17,6 +18,7 @@ $(document).ready(function () {
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(`${domainName}_guestId`)) {
 				$guestModal.modal('show');
+				guestModalOpen = true;
 				/* Trigger geolocation permission */
 				navigatorGeolocation((error, coords) => { });
 			}
@@ -53,9 +55,14 @@ $guestForm.addEventListener('submit', (e) => {
 						$guestFormInput.value = '';
 						$guestFormTextarea.value = '';
 						$guestModal.modal('hide');
+						guestModalOpen = false;
 					}
 				}, 5000);
 			});
 		}
 	});
 });
+
+guestModalOpenGetStatus = () => {
+	return guestModalOpen;
+}
