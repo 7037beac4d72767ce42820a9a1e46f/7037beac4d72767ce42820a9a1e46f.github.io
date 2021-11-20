@@ -480,3 +480,8 @@
 		-webkit-transform: rotate(360deg);
 	}
 }
+
+/* GitHub reference page */
+.page-min-height {
+	min-height: 500px;
+}

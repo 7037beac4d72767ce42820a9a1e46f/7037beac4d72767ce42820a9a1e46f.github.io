@@ -43,7 +43,11 @@
     <section id="content-page">
         <div class="container">
             <h4 class="content-title"><a href="../">References</a> &#187; <a href="./">React</a> &#187; Expense App</h4>
-            <p style="height: 500px"></p>
+            <div class="row">
+                <div class="col-lg-12 mx-auto page-min-height">
+                    <iframe class="w-100 page-min-height" name="referenceAppName" id="referenceAppName" src="about:blank" frameborder="0" scrolling="auto"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -84,10 +88,17 @@
             $('#layout-header').load('../../layout/header.html');
             $('#layout-footer').load('../../layout/footer.html');
             $('#layout-guest-modal').load('../../layout/guest-modal.html', () => {
-                $.getScript('../../js/guestModal.js');
-            });
-            $('#layout-loader-modal').load('../../layout/loader-modal.html', () => {
-                $.getScript('../../js/loaderModal.js');
+                $.getScript('../../js/guestModal.js', () => {
+                    $('#layout-loader-modal').load('../../layout/loader-modal.html', () => {
+                        $.getScript('../../js/loaderModal.js', () => {
+                            showLoaderModal();
+                            $('#referenceAppName').attr('src', 'https://jt-reactjs-expense-app.herokuapp.com');
+                            $("#referenceAppName").on('load', () => {
+                                hideLoaderModal()
+                            });
+                        });
+                    });
+                });
             });
         });
     </script>
