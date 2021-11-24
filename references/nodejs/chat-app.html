@@ -43,9 +43,14 @@
     <section id="content-page">
         <div class="container">
             <h4 class="content-title"><a href="../">References</a> &#187; <a href="./">Node.js</a> &#187; Chat App</h4>
-            <p>
-                <script src="https://gist.github.com/jttorate/c5cc6e3ac38f3229dc7110ce2ba238d3.js"></script>
-            </p>
+            <a class="text-decoration-none" href="https://jt-nodejs-chat-app.herokuapp.com" target="_blank"><i class="fa fa-link"></i> View Page</a> |
+            <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-chat-app" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-12 mx-auto page-min-height">
+                    <iframe class="w-100 page-min-height" name="referenceAppName" id="referenceAppName" src="about:blank" frameborder="0" scrolling="auto"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -86,10 +91,17 @@
             $('#layout-header').load('../../layout/header.html');
             $('#layout-footer').load('../../layout/footer.html');
             $('#layout-guest-modal').load('../../layout/guest-modal.html', () => {
-                $.getScript('../../js/guestModal.js');
-            });
-            $('#layout-loader-modal').load('../../layout/loader-modal.html', () => {
-                $.getScript('../../js/loaderModal.js');
+                $.getScript('../../js/guestModal.js', () => {
+                    $('#layout-loader-modal').load('../../layout/loader-modal.html', () => {
+                        $.getScript('../../js/loaderModal.js', () => {
+                            showLoaderModal();
+                            $('#referenceAppName').attr('src', 'https://jt-nodejs-chat-app.herokuapp.com');
+                            $("#referenceAppName").on('load', () => {
+                                hideLoaderModal()
+                            });
+                        });
+                    });
+                });
             });
         });
     </script>
