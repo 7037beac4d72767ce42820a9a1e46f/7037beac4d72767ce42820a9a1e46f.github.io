@@ -66,3 +66,16 @@ contactUsForm = ({ firstName, lastName, email, contactNumber, message }, callbac
 		},
 	});
 };
+
+/** Login */
+loginForm = ({ username, password }, callback) => {
+	/* CORS Anywhere */
+	$.ajaxPrefilter(function (options) {
+		if (options.crossDomain && jQuery.support.cors) {
+			const http = window.location.protocol === 'http:' ? 'http:' : 'https:';
+			options.url = http + '//jt-cors-anywhere.herokuapp.com/' + options.url;
+		}
+	});
+
+	callback(null, true);
+};
