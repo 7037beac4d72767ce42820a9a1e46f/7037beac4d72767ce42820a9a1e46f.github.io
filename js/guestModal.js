@@ -16,11 +16,11 @@ const parsedQs = parseQueryString(queryString);
 const appCode = (parsedQs.app ?? 'GLOBAL').toString().trim().toUpperCase();
 let guestModalOpen = false; // Default
 
-$(document).ready(function () {
+$(document).ready(() => {
 	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
 
-	$(window).scroll(function () {
-		const lastTwoPath = urlArray.slice(Math.max(urlArray.length - 2, 1));
+	$(window).scroll(() => {
+		const lastTwoPath = urlArray.length !== 2 ? urlArray.slice(Math.max(urlArray.length - 2, 1)) : urlArray;
 		console.log(lastTwoPath);
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(`${domainName}_guestId`) && windowUrlRequiredGuestModal(lastTwoPath[0], lastTwoPath[1])) {
