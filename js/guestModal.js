@@ -9,7 +9,7 @@ const $guestModal = $('#guest-modal');
 const baseUrl = window.location.origin;
 const hostUrl = window.location.host;
 const hrefUrl = window.location.href;
-const urlArray = window.location.pathname.split( '/' );
+const urlArray = window.location.pathname.split('/');
 /* Get source app URL params if exist */
 const queryString = window.location.search.substring(1);
 const parsedQs = parseQueryString(queryString);
@@ -20,13 +20,14 @@ $(document).ready(function () {
 	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
 
 	$(window).scroll(function () {
+		const lastTwoPath = urlArray.slice(Math.max(urlArray.length - 2, 1));
 		console.log(`Base URL: ${baseUrl}`);
 		console.log(`Host URL: ${hostUrl}`);
 		console.log(`HREF URL: ${hrefUrl}`);
 		console.log('URL array');
 		console.log(urlArray);
 		if ($(this).scrollTop() > 50) {
-			if (!getCookie(`${domainName}_guestId`)) {
+			if (!getCookie(`${domainName}_guestId`) && windowUrlRequiredGuestModal(lastTwoPath[0], lastTwoPath[1])) {
 				$guestModal.modal('show');
 				guestModalOpen = true;
 				/* Trigger geolocation permission */
@@ -77,7 +78,7 @@ guestModalOpenGetStatus = () => {
 	return guestModalOpen;
 }
 
-windowRequiredUrl = (url) => {
+windowUrlRequiredGuestModal = (path1, path2) => {
 	const requiredUrl = ['', 'disclaimer', 'cookie-policy'];
-	return requiredUrl.indexOf(url.trim()) !== -1;
+	return (path1.trim() === "" && requiredUrl.indexOf(path2.trim()) !== -1) || (path1.trim() === "" && path2.trim() === "");
 }
