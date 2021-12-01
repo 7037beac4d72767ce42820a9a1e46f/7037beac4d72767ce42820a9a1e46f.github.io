@@ -21,11 +21,7 @@ $(document).ready(function () {
 
 	$(window).scroll(function () {
 		const lastTwoPath = urlArray.slice(Math.max(urlArray.length - 2, 1));
-		console.log(`Base URL: ${baseUrl}`);
-		console.log(`Host URL: ${hostUrl}`);
-		console.log(`HREF URL: ${hrefUrl}`);
-		console.log('URL array');
-		console.log(urlArray);
+		console.log(lastTwoPath);
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(`${domainName}_guestId`) && windowUrlRequiredGuestModal(lastTwoPath[0], lastTwoPath[1])) {
 				$guestModal.modal('show');
@@ -80,5 +76,5 @@ guestModalOpenGetStatus = () => {
 
 windowUrlRequiredGuestModal = (path1, path2) => {
 	const requiredUrl = ['', 'disclaimer', 'cookie-policy'];
-	return (path1.trim() === "" && requiredUrl.indexOf(path2.trim()) !== -1) || (path1.trim() === "" && path2.trim() === "");
+	return (path1?.trim() === "" && requiredUrl.indexOf(path2?.trim()) !== -1) || (path1?.trim() === "" && path2?.trim() === "");
 }
