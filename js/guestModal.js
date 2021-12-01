@@ -21,18 +21,35 @@ $(document).ready(() => {
 
 	$(window).scroll(() => {
 		const lastTwoPath = pathArray.length !== 2 ? pathArray.slice(Math.max(pathArray.length - 2, 1)) : pathArray;
-		if ($(this).scrollTop() > 50) {
-			if (!getCookie(`${domainName}_guestId`) && windowUrlRequiredGuestModal(lastTwoPath[0], lastTwoPath[1])) {
-				$guestModal.modal('show');
-				guestModalOpen = true;
-				/* Trigger geolocation permission */
-				navigatorGeolocation((error, coords) => { });
+
+		if (lastTwoPath[0]?.trim() === "" && lastTwoPath[1]?.trim() === "") {
+			if ($(this).scrollTop() > 50) {
+				openGuestModal(lastTwoPath[0]?.trim(), lastTwoPath[1]?.trim());
 			}
 		} else {
-			$guestModal.modal('hide');
+			openGuestModal(lastTwoPath[0]?.trim(), lastTwoPath[1]?.trim());
 		}
 	});
 });
+
+openGuestModal = (path1, path2) => {
+	if (!getCookie(`${domainName}_guestId`) && !windowPathNotRequiredGuestModal(path1, path2)) {
+		$guestModal.modal('show');
+		guestModalOpen = true;
+		/* Trigger geolocation permission */
+		navigatorGeolocation((error, coords) => { });
+	}
+}
+
+guestModalOpenGetStatus = () => {
+	return guestModalOpen;
+}
+
+windowPathNotRequiredGuestModal = (path1, path2) => {
+	const requiredPath1 = ['login'];
+	const requiredPath2 = [''];
+	return requiredPath1.indexOf(path1?.trim()) !== -1 && requiredPath2.indexOf(path2?.trim()) !== -1;
+}
 
 /** Guest Modal Form Submit */
 $guestForm.addEventListener('submit', (e) => {
@@ -68,12 +85,3 @@ $guestForm.addEventListener('submit', (e) => {
 		}
 	});
 });
-
-guestModalOpenGetStatus = () => {
-	return guestModalOpen;
-}
-
-windowUrlRequiredGuestModal = (path1, path2) => {
-	const requiredUrl = ['', 'disclaimer', 'cookie-policy'];
-	return (path1?.trim() === "" && requiredUrl.indexOf(path2?.trim()) !== -1) || (path1?.trim() === "" && path2?.trim() === "");
-}
