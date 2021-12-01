@@ -9,7 +9,7 @@ const $guestModal = $('#guest-modal');
 const baseUrl = window.location.origin;
 const hostUrl = window.location.host;
 const hrefUrl = window.location.href;
-const urlArray = window.location.pathname.split('/');
+const pathArray = window.location.pathname.split('/');
 /* Get source app URL params if exist */
 const queryString = window.location.search.substring(1);
 const parsedQs = parseQueryString(queryString);
@@ -20,8 +20,7 @@ $(document).ready(() => {
 	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
 
 	$(window).scroll(() => {
-		const lastTwoPath = urlArray.length !== 2 ? urlArray.slice(Math.max(urlArray.length - 2, 1)) : urlArray;
-		console.log(lastTwoPath);
+		const lastTwoPath = pathArray.length !== 2 ? pathArray.slice(Math.max(pathArray.length - 2, 1)) : pathArray;
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(`${domainName}_guestId`) && windowUrlRequiredGuestModal(lastTwoPath[0], lastTwoPath[1])) {
 				$guestModal.modal('show');
