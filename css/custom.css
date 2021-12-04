@@ -485,3 +485,7 @@
 .page-min-height {
 	min-height: 500px;
 }
+
+.heading {
+	color: #555;
+}
