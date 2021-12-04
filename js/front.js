@@ -33,10 +33,10 @@ $(function () {
      *  Scroll Spy
      *  =======================================*/
 
-    $('body').scrollspy({
-        target: '#navbarcollapse',
-        offset: 80
-    });
+    // $('body').scrollspy({
+    //     target: '#navbarcollapse',
+    //     offset: 80
+    // });
 
 
     /* =========================================

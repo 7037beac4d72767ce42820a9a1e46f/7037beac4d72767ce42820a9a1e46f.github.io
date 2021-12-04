@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>JUNNEL T TORATE</title>
+    <title>Contact Me | JUNNEL T TORATE</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="all,follow" />
@@ -39,43 +39,50 @@
 <body>
     <div id="layout-header"></div>
 
-    <!-- Intro Image-->
-    <section id="intro" style="background: url(img/home.jpg) center center no-repeat; background-size: cover" class="intro-section pb-2">
-        <div class="container text-center">
-            <div data-animate="fadeInDown" class="logo"><img src="img/developer-avatar.jpg" alt="logo" width="200" class="image rounded-circle" /></div>
-            <h1 data-animate="fadeInDown" class="text-shadow mb-5">Hello, I'm Nelo!</h1>
-            <p data-animate="slideInUp" class="h3 text-shadow text-400">
-                A Software Engineer aims to fulfill the user's needs by means of software applications and provide positive user experiences.
-            </p>
-        </div>
-    </section>
-
-    <!-- About-->
-    <section id="about" class="about-section mt-n5">
+    <!-- Contact-->
+    <section id="contact" class="bg-gradient services-section">
         <div class="container">
             <header class="text-center">
-                <h2 class="title">About Me</h2>
+                <h2 class="title">Contact Me</h2>
             </header>
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <img src="img/developer-profile.jpg" alt="This is me!" class="image developer-img img-fluid mb-3" />
+            <div class="row mb-4">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-me-form" method="post" action="">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="firstName" placeholder="Your first name *" required="required" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="lastName" placeholder="Your last name *" required="required" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="email" placeholder="Your email *" required="required" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="contactNumber" placeholder="Your contact number" class="form-control" />
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea name="message" placeholder="Message for me *" rows="4" required="required" class="form-control contact-me-form-message-input"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button id="contact-me-btn" class="btn btn-outline-light">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-lg-8">
-                    <p>I graduated at <b>Aklan State University</b>, Kalibo, Aklan, Philippines with the degree of <b>Bachelor of Science in Information Technology</b>, Batch 2012.</p>
-                    <p>
-                        Awards:
-                        <br/> &bull; Best in Software Project Development (Thesis)
-                        <br/> &bull; Aklan State University Dean's Lister
-                    </p>
-                    <p>
-                        Experience:
-                        <br/> I started my career with passion and commitment to seek knowledge to improve myself in this profession and offer what I can do. Strongly tackle this line of vocation to prove that I'm worthy and fit being a software engineer.
-                    </p>
-                    <p>
-                        I'm successfully working with a team and self-directed settings to work with a minimal supervision and I've experienced in Agile Software Development.
-                    </p>
-                    <p>I always go with the flow of IT Innovations by improving the range of my skill sets so that I can easily adapt any technologies.</p>
-                    <p>On the other hand, watching animé and doing graphic designs are my hobbies.</p>
+            </div>
+
+            <hr/>
+
+            <div class="col-lg-12 text-center">
+                <div class="icon">
+                    <a href="mailto:jttorate@gmail.com?subject=Website Inquiry" title="jttorate@gmail.com"><i class="fa fa-envelope-square"></i></a>
+                    <a href="https://www.linkedin.com/in/jttorate" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.instagram.com/hypenelo" target="_blank" title="@hypenelo"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/jttorate" target="_blank"><i class="fa fa-github-square"></i></a>
                 </div>
             </div>
         </div>
@@ -112,6 +119,7 @@
     <script src="js/cookiePolicy.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/layout.js"></script>
+    <script src="js/contactForm.js"></script>
 
     <script>
         $(function() {
