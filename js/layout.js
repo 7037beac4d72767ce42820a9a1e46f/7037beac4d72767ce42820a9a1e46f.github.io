@@ -1,5 +1,5 @@
 $(function () {
-    $('#layout-header').load("layout/header.html", function () {
+    $('#layout-header').load("https://jttorate.com/layout/header.html", function () {
 
         /* Navigation active status */
         const url = window.location.href;
@@ -30,5 +30,5 @@ $(function () {
         }
     });
 
-    $('#layout-footer').load("layout/footer.html");
+    $('#layout-footer').load("https://jttorate.com/layout/footer.html");
 });
