@@ -28,7 +28,7 @@
     <!-- Cookie Consent-->
     <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/logos/logo.png" />
+    <link rel="shortcut icon" href="img/logos/jttorate-logo.png" />
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -37,7 +37,6 @@
 </head>
 
 <body>
-    <!-- Header-->
     <div id="layout-header"></div>
 
     <section id="content-page">
@@ -103,7 +102,7 @@
 
             <h4 class="content-title">Contacting us</h4>
             <p>If you have any questions, concerns, or complaints regarding this Disclaimer, we encourage you to contact us using the details below:</p>
-            <p><a rel="nofollow" href="/#contact">https://jttorate.com</a></p>
+            <p><a rel="nofollow" href="https://jttorate.com/contact-me">https://jttorate.com</a></p>
 
             <p>This document was last updated on September 4, 2021</p>
         </div>
@@ -139,11 +138,10 @@
     <script src="js/guestLogger.js"></script>
     <script src="js/cookiePolicy.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/layout.js"></script>
 
     <script>
         $(function() {
-            $('#layout-header').load('layout/header.html');
-            $('#layout-footer').load('layout/footer.html');
             $('#layout-guest-modal').load('layout/guest-modal.html', () => {
                 $.getScript('js/guestModal.js');
             });
