@@ -32,7 +32,7 @@ p {
 }
 
 section {
-	padding: 90px 0;
+	padding: 70px 0 50px 0;
 	position: relative;
 }
 
@@ -124,6 +124,10 @@ nav.navbar {
 	padding-bottom: 0;
 	background: #fff;
 	border-bottom: 1px solid #e6e6e6;
+	-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+	-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 991.98px) {
