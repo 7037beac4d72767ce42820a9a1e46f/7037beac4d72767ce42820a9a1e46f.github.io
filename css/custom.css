@@ -110,6 +110,12 @@
 	min-height: 113px;
 }
 
+.contact-me-section .icon {
+	font-size: 3.5rem;
+	text-shadow: 3px 3px 0 #ccc;
+	color: #2b90d9;
+}
+
 .text-decoration-none {
 	text-decoration: none;
 }
@@ -405,7 +411,7 @@
 
 .services-badge {
 	font-size: 15px;
-	/* color: #2b90d9; */
+	color: #2b90d9;
 	margin: 0px 0px 6px 2px;
 	font-weight: 500;
 }
@@ -482,5 +488,5 @@
 }
 
 .heading {
-	color: #555;
+	/* color: #555; */
 }

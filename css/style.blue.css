@@ -266,8 +266,8 @@ nav.navbar a.nav-link:hover {
 
 .services-section .icon {
 	font-size: 3.5rem;
-	text-shadow: 3px 3px 0 #ccc;
-	color: #2b90d9;
+	text-shadow: 3px 3px 0 #2b90d9;
+	/* color: #2b90d9; */
 }
 
 .services-section p.description {
