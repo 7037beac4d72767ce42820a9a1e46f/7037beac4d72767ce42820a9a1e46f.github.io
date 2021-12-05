@@ -565,14 +565,12 @@ nav.navbar a.nav-link:hover {
 	/*     margin-top: 50px; */
 }
 
-/*
-*
-* =====================
-* CUSTOEMRS
-* =====================
-*
-*/
 .customers-section img {
+	padding: 10px;
+	max-width: 80px;
+}
+
+.technologies-section img {
 	padding: 10px;
 	max-width: 80px;
 }

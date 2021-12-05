@@ -6,3 +6,7 @@ $("#navbarcollapse ul li .nav-link").click(function () {
         $("#navbar-toggler").click();
     }
 });
+
+$(function () {
+    $("[rel='tooltip']").tooltip();
+});
