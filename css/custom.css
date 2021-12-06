@@ -8,6 +8,16 @@
 	margin-right: 4rem !important;
 }
 
+.p-6,
+.p-6 {
+	padding: 4rem !important;
+}
+
+.pt-6,
+.py-6 {
+	padding-top: 4rem !important;
+}
+
 .error {
 	color: #a71930;
 }
@@ -489,4 +499,11 @@
 
 .heading {
 	/* color: #555; */
+}
+
+/* Login */
+#main-login {
+	min-height: 100vh;
+	background: #222;
+	padding: 0 0 0 0;
 }
