@@ -58,21 +58,6 @@
                         <li><a href="#" data-filter="logo">Logo</a></li>
                     </ul>
 
-                    <div id="detail">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="col-lg-10 mx-auto">
-                                    <span class="close">×</span>
-                                    <div id="detail-slider" class="owl-carousel owl-theme"></div>
-                                </div>
-                                <div class="text-center">
-                                    <h1 id="detail-title" class="title"></h1>
-                                </div>
-                                <div id="detail-content"></div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Reference detail-->
                     <div id="references-masonry">
                         <div class="row">
@@ -408,6 +393,9 @@
     <!-- Loader Modal -->
     <div id="layout-loader-modal"></div>
 
+    <!-- Reference Modal -->
+    <div id="layout-reference-modal"></div>
+
     <!-- Scroll Top Button-->
     <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
@@ -443,6 +431,7 @@
             $('#layout-loader-modal').load('layout/loader-modal.html', () => {
                 $.getScript('js/loaderModal.js');
             });
+            $('#layout-reference-modal').load('layout/reference-modal.html');
         });
     </script>
 </body>
