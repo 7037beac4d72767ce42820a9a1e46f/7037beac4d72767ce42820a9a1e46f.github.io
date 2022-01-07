@@ -56,10 +56,10 @@ $guestForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	/** Check if geolocation was allowed */
-	navigator.permissions.query({ name: 'geolocation' }).then((data) => {
-		if (data.state === 'denied') {
-			$guestFormError.innerHTML = 'Your location is not enabled. Please enable to use this site.';
-		} else {
+	// navigator.permissions.query({ name: 'geolocation' }).then((data) => {
+	// 	if (data.state === 'denied') {
+	// 		$guestFormError.innerHTML = 'Your location is not enabled. Please enable to use this site.';
+	// 	} else {
 			showLoaderModal();
 			$guestFormError.innerHTML = '';
 			/** Disable Button */
@@ -82,6 +82,6 @@ $guestForm.addEventListener('submit', (e) => {
 					}
 				}, 5000);
 			});
-		}
-	});
+	// 	}
+	// });
 });
