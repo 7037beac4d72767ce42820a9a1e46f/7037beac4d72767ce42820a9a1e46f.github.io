@@ -37,7 +37,7 @@ openGuestModal = (path1, path2) => {
 		$guestModal.modal('show');
 		guestModalOpen = true;
 		/* Trigger geolocation permission */
-		navigatorGeolocation((error, coords) => { });
+		// navigatorGeolocation((error, coords) => { });
 	}
 }
 

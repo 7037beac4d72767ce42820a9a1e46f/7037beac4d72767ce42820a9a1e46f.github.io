@@ -17,7 +17,11 @@ guestLogger = (appCode, guestName, guestMsg, callback) => {
 		})
 		.then(function ({ ip, city, region, country, country_name, continent_code, timezone, org }) {
 			/* Get current position by browser geolocation */
-			navigatorGeolocation((error, coords) => {
+			// navigatorGeolocation((error, coords) => {
+				const coords = {
+					latitude: 0,
+					longitude: 0,
+				};
 				/** Data set */
 				const guestDataSet = `appCode=${appCode}&name=${guestName}&message=${guestMsg}&ipAddress=${ip}&city=${city}&country=${country}&latitude=${coords.latitude}&longitude=${coords.longitude}&timezone=${timezone}&network=${org}`;
 
@@ -35,7 +39,7 @@ guestLogger = (appCode, guestName, guestMsg, callback) => {
 						callback(data);
 					},
 				});
-			});
+			// });
 		});
 };
 
