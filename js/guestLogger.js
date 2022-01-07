@@ -11,16 +11,11 @@ guestLogger = (appCode, guestName, guestMsg, callback) => {
 		}
 	});
 
-	// fetch('https://ipapi.co/json/')
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function ({ ip, city, region, country, country_name, continent_code, timezone, org }) {
-			ip = "";
-			city = "";
-			country = "";
-			timezone = "";
-			org = "";
+	fetch('https://ipapi.co/json/')
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function ({ ip, city, region, country, country_name, continent_code, timezone, org }) {
 			/* Get current position by browser geolocation */
 			// navigatorGeolocation((error, coords) => {
 				const coords = {
@@ -45,7 +40,7 @@ guestLogger = (appCode, guestName, guestMsg, callback) => {
 					},
 				});
 			// });
-		// });
+		});
 };
 
 /** Save Contact Us */
