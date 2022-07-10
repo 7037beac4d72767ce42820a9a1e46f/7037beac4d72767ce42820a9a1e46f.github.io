@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
         "transparency": "5",
         "fontsize": "tiny",
         "content": {
-            "href": "https://jttorate.com/cookie-policy"
+            "href": "https://portfolio.jttorate.com/cookie-policy"
         },
         "position": "bottom-right",
         "corners": "normal"
