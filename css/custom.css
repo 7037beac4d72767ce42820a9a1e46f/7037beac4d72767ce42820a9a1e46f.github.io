@@ -426,7 +426,8 @@
   font-weight: 500;
 }
 
-.experience-company {
+.experience-company,
+.certification-group-title {
   color: #555;
   text-decoration: underline;
 }
