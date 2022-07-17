@@ -1,12 +1,12 @@
 /* your script go here */
 
 /* Menu Toggle */
-$("#navbarcollapse ul li .nav-link").click(function () {
-    if ($(window).width() <= 991) {
-        $("#navbar-toggler").click();
-    }
+$("#navbarcollapse ul li .nav-link").click(() => {
+  if ($(window).width() <= 991) {
+    $("#navbar-toggler").click();
+  }
 });
 
-$(function () {
-    $("[rel='tooltip']").tooltip();
+$(() => {
+  $("[rel='tooltip']").tooltip();
 });

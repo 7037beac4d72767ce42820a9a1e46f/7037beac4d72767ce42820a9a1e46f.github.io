@@ -46,7 +46,7 @@ openGuestModal = (path1, path2) => {
     $guestModal.modal("show");
     guestModalOpen = true;
     /* Trigger geolocation permission */
-    // navigatorGeolocation((error, coords) => { });
+    // navigatorGeolocation((error, coords) => {});
   }
 };
 
@@ -68,31 +68,31 @@ $guestForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   /** Check if geolocation was allowed */
-  navigator.permissions.query({ name: "geolocation" }).then((data) => {
-    // if (data.state === "denied") {
-    //   $guestFormError.innerHTML =
-    //     "Your location is not enabled. Please enable to use this site.";
-    // } else {
-    showLoaderModal();
-    $guestFormError.innerHTML = "";
-    /** Disable Button */
-    $guestFormButton.setAttribute("disabled", "disabled");
+  // navigator.permissions.query({ name: "geolocation" }).then((data) => {
+  //   if (data.state === "denied") {
+  //     $guestFormError.innerHTML =
+  //       "Your location is not enabled. Please enable to use this site.";
+  //   } else {
+  showLoaderModal();
+  $guestFormError.innerHTML = "";
+  /** Disable Button */
+  $guestFormButton.setAttribute("disabled", "disabled");
 
-    const guestName = e.target.elements.guestName.value;
-    const guestMsg = e.target.elements.guestMessage.value;
+  const guestName = e.target.elements.guestName.value;
+  const guestMsg = e.target.elements.guestMessage.value;
 
-    guestLogger(appCode, guestName, guestMsg, (error, data) => {
-      $guestFormButton.removeAttribute("disabled");
-      hideLoaderModal();
+  guestLogger(appCode, guestName, guestMsg, (error, data) => {
+    $guestFormButton.removeAttribute("disabled");
+    hideLoaderModal();
 
-      if (!error) {
-        /** Enable Form */
-        $guestFormInput.value = "";
-        $guestFormTextarea.value = "";
-        $guestModal.modal("hide");
-        guestModalOpen = false;
-      }
-    });
-    // }
+    if (!error) {
+      /** Enable Form */
+      $guestFormInput.value = "";
+      $guestFormTextarea.value = "";
+      $guestModal.modal("hide");
+      guestModalOpen = false;
+    }
   });
+  //   }
+  // });
 });
