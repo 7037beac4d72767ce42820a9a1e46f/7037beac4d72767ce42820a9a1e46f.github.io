@@ -1,7 +1,7 @@
 $(() => {
   $("#layout-header").load(
     "https://portfolio.jttorate.com/layout/header.html",
-    function () {
+    () => {
       /* Navigation active status */
       const url = window.location.href;
       const urlQueries = url.split("/");
